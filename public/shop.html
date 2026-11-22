@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f28c28">
+<title>Sri Manikanta General Stores</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/style.css?v=5.0">
+</head>
+<body>
+<header class="shophead">
+  <div class="head">
+    <div class="brand">
+      <div class="brandmark">🛒</div>
+      <div><h1>Sri Manikanta General Stores</h1><p>శ్రీ మణికంఠ జనరల్ స్టోర్స్ · Fresh groceries for your home</p></div>
+    </div>
+    <button id="cartJump" class="cartTop">Cart <b id="count">0</b></button>
+  </div>
+</header>
+<main>
+  <section class="hero-slider" aria-label="Store offers">
+    <div class="slides" id="slides">
+      <article class="slide slide-grocery active">
+        <div class="slide-copy"><span class="slide-kicker">SRI MANIKANTA GENERAL STORES</span><h2>All your daily groceries under one roof!</h2><p>బియ్యం · పప్పులు · నూనెలు · మసాలా దినుసులు</p><a href="#catalog" class="slide-cta">Shop groceries <span>→</span></a></div>
+        <div class="slide-art grocery-art" aria-hidden="true"><span>🌾</span><span>🥜</span><span>🫙</span><span>🥬</span><span>🍚</span></div>
+        <div class="slide-tag">FRESH EVERY DAY</div>
+      </article>
+      <article class="slide slide-drinks">
+        <div class="slide-copy"><span class="slide-kicker">CHILLED & REFRESHING</span><h2>Cool Drinks</h2><p>Refresh your day with chilled beverages!</p><a href="#catalog" class="slide-cta">Explore drinks <span>→</span></a></div>
+        <div class="slide-art drinks-art" aria-hidden="true"><span>🥤</span><span>🧃</span><span>🧊</span><span>🍋</span></div>
+        <div class="slide-tag">SERVE IT CHILLED</div>
+      </article>
+      <article class="slide slide-snacks">
+        <div class="slide-copy"><span class="slide-kicker">TASTY BITES & QUICK MEALS</span><h2>Snacks & Instant Foods</h2><p>నూడుల్స్ · చిప్స్ · బిస్కెట్లు · స్నాక్స్</p><a href="#catalog" class="slide-cta">Explore snacks <span>→</span></a></div>
+        <div class="slide-art snacks-art" aria-hidden="true"><span>🍜</span><span>🍟</span><span>🍿</span><span>🥨</span></div>
+        <div class="slide-tag">YOUR FAVOURITE SNACKS</div>
+      </article>
+    </div>
+    <button class="slider-arrow prev" id="slidePrev" aria-label="Previous slide">‹</button>
+    <button class="slider-arrow next" id="slideNext" aria-label="Next slide">›</button>
+    <div class="slider-dots" id="sliderDots"><button class="dot active" aria-label="Slide 1"></button><button class="dot" aria-label="Slide 2"></button><button class="dot" aria-label="Slide 3"></button></div>
+  </section>
+  <input id="search" class="searchbar" placeholder="Search groceries / వస్తువులు వెతకండి…">
+  <div class="sectionhead"><div><h2>Shop groceries</h2><p>Choose products and your preferred quantity</p></div><small id="itemCount"></small></div>
+  <div id="categories" class="categories"></div>
+  <div id="catalog" class="catalog">Loading products…</div>
+  <section id="cartSection" class="card">
+    <div class="head"><div><h2>Your Cart</h2><p>Review and update quantities</p></div><button id="continue" class="soft">＋ Continue shopping</button></div>
+    <div id="cart">Your cart is empty.</div>
+    <div class="total"><span>Cart total</span><b id="total">₹0.00</b></div>
+  </section>
+  <section class="card">
+    <h2>Place your order</h2>
+    <div class="fields">
+      <label>Name<input id="customer" placeholder="Your name" autocomplete="name"></label>
+      <label>Mobile number<input id="phone" inputmode="numeric" placeholder="10-digit mobile" autocomplete="tel"></label>
+      <label class="wide">Address / Pickup note<input id="address" placeholder="Delivery address or shop pickup"></label>
+    </div>
+    <button id="order" class="full">Place order</button>
+    <p id="msg" class="message"></p><div id="receiptActions" class="receipt-actions hidden"><button id="downloadReceipt" class="full">⬇ Download order receipt</button><button id="printReceipt" class="soft full">Print / Save as PDF</button></div>
+  </section>
+</main>
+<div id="modal" class="modal hidden">
+  <div id="backdrop" class="backdrop"></div>
+  <div class="modalbox">
+    <button id="close" class="close" aria-label="Close">×</button>
+    <img id="mimg" alt="">
+    <h2 id="mname"></h2><p id="mcat"></p>
+    <b id="mprice" class="green"></b>
+    <label>How would you like to buy?
+      <select id="mode">
+        <option value="grams">By grams</option>
+        <option value="kg">By kilograms</option>
+        <option value="rupees">By rupees</option>
+        <option value="units">By pieces / packs</option>
+      </select>
+    </label>
+    <label id="qtyLabel">Quantity in grams<input id="qty" type="number" min=".001" step="any" value="500"></label>
+    <div id="conversion" class="conversion" aria-live="polite">500 grams · ₹0.00</div>
+    <button id="add" class="full">Add to cart</button>
+  </div>
+</div>
+<script src="/shop.js?v=5.0"></script>
+</body>
+</html>
