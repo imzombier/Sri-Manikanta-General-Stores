@@ -1,0 +1,17 @@
+{
+  "name": "General Store Shopping",
+  "short_name": "My Store",
+  "start_url": "/shop",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f7f5",
+  "theme_color": "#14532d",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
